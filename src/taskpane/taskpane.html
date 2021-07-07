@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+   /* blue button */
+
+  a { text-decoration: none; margin: 0 10px; }
+  a.btn {
+    display: inline-block;
+    color: #666;
+    background-color: #eee;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-bottom-width: 3px;
+  }
+a.btn.btn-blue {
+	background-color: #699DB6;
+  text-align: center;
+  margin-bottom: 20px;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+	a.btn.btn-blue:hover {
+		background-color: #4F87A2;
+		border-color: rgba(0,0,0,0.5);
+	}
+	
+	a.btn.btn-blue:active {
+		background-color: #3C677B;
+		border-color: rgba(0,0,0,0.9);
+	}
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contoso Task Pane Add-in</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+   <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-l ms-landing-page">
+  <main class="ms-landing-page__main">
+    <section class="ms-landing-page__content ms-font-m ms-fontColor-neutralPrimary">
+      <div id="not-configured" style="display: none;">
+        <div class="centered ms-font-xxl ms-u-textAlignCenter">Welcome!</div>
+        <div class="ms-font-xl" id="settings-prompt">Please choose the <strong>Settings</strong> icon at the bottom of this window to configure this add-in.</div>
+      </div>
+      <div id="gist-list-container" style="display: none;">
+        <form>
+          <div id="gist-list">
+          </div>
+        </form>
+      </div>
+      <div id="error-display" style="display: none;" class="ms-u-borderBase ms-fontColor-error ms-font-m ms-bgColor-error ms-borderColor-error">
+      </div>
+    </section>
+    <a href="#" class="btn btn-blue" id="get-aviso-button">Click here to login</a>
+    <!-- <button type="button" id="get-aviso-button">Click Me!</button> -->
+    <button class="ms-Button ms-Button--primary" id="insert-button" tabindex=0 disabled>
+      <span class="ms-Button-label">Insert</span>
+    </button>
+  </main>
+  <footer class="ms-landing-page__footer ms-bgColor-themePrimary">
+    <div class="ms-landing-page__footer--left">
+      <img src="../../assets/logo-filled.png" />
+      <h1 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-white">Git the gist</h1>
+    </div>
+    <div id="settings-icon" class="ms-landing-page__footer--right" aria-label="Settings" tabindex=0>
+      <i class="ms-Icon enlarge ms-Icon--Settings ms-fontColor-white"></i>
+    </div>
+  </footer>
+  <script>
+    function myFunction() {
+      alert("I am an alert box!");
+    }
+    </script>
+  <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../node_modules/showdown/dist/showdown.min.js"></script>
+  <script type="text/javascript" src="../node_modules/urijs/src/URI.min.js"></script>
+  <script type="text/javascript" src="../src/helpers/addin-config.js"></script>
+  <script type="text/javascript" src="../src/helpers/gist-api.js"></script>
+  <script type="text/javascript" src="taskpane.js"></script>
+</body>
+
+</html>
